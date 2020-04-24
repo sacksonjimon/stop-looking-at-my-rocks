@@ -1,0 +1,15 @@
+#!/usr/bin/python           # This is server.py file
+
+import socket               # Importing socket
+
+s = socket.socket()         # Creates a socket object
+host = socket.gethostname() # Gets local machine name
+port = 11111                # Reserves a port for your service
+s.bind((host, port))        # Binds to the port
+
+s.listen(5)                 # waits for client connection.
+while True:
+   c, addr = s.accept()     # Establishes connection with client
+   print 'Got connection from', addr
+   c.send('You have connected')
+   c.close() 
