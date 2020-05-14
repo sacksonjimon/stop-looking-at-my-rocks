@@ -1,8 +1,12 @@
+#imports window from tkinter 
 from tkinter import *
 
 window = Tk()
 
+#titles window
 window.title("Welcome to Irock")
+
+#selects word font, size, and placement for each window label  
 
 clr_lbl = Label(window, text="Color", font=("Times New Roman", 16))
 
@@ -24,9 +28,12 @@ strk_lbl = Label(window, text="Streak Powder", font=("Times New Roman", 16))
 
 strk_lbl.grid(column=4, row=0)
 
+#creates window size
+
 window.geometry('550x300')
 
-#lbl.grid(column=0, row=0)
+
+#creates text box for each characteristic
 
 clr_txt = Entry(window,width=10)
 
@@ -39,4 +46,31 @@ txr_txt.grid(column=1, row=1)
 lst_txt = Entry(window,width=10)
 
 lst_txt.grid(column=2, row=1)
-         
+
+area_txt = Entry(window,width=10)
+
+area_txt.grid(column=3, row=1)
+
+strk_txt = Entry(window,width=10)
+
+strk_txt.grid(column=4, row=1)
+
+#saves entries when enter button is clicked
+
+def clicked():
+    
+    clr=clr_txt.get()
+    
+    txr=txr_txt.get()
+
+    lst=lst_txt.get()
+
+    area=area_txt.get()
+
+    strk=strk_txt.get()
+
+btn = Button(window, text="Enter", command=clicked)
+
+btn.grid(column=2, row=2)
+
+window.mainloop()
