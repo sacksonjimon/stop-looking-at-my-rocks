@@ -1,9 +1,10 @@
+#imports window from tkinter 
 from tkinter import *
 
 window = Tk()
-
+#titles window
 window.title("Welcome to Irock")
-
+#selects word font, size, and placement for each window label  
 clr_lbl = Label(window, text="Color", font=("Times New Roman", 16))
 
 clr_lbl.grid(column=0, row=0)
@@ -23,9 +24,9 @@ area_lbl.grid(column=3, row=0)
 strk_lbl = Label(window, text="Streak Powder", font=("Times New Roman", 16))
 
 strk_lbl.grid(column=4, row=0)
-
+#creates window size
 window.geometry('550x300')
-
+#creates text box for each characteristic
 #lbl.grid(column=0, row=0)
 
 clr_txt = Entry(window,width=10)
