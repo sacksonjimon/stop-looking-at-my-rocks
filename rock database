@@ -1,13 +1,20 @@
+#imports csv with rock characteristics 
 import csv
 
+#opens csv as file 
 with open('rock_database.txt') as csv_file:
+#reads cav using commas as delimiters 
     csv_reader = csv.reader(csv_file, delimiter=',')
+#starts line count at 0
     line_count = 0
     for row in csv_reader:
+#at the top, prints all column names (categories) then adds a line 
         if line_count == 0:
             print(f'Column rocks are {", ".join(row)}')
             line_count += 1
+#for every line after prints each characteristic and rock name in sentence form using commas as dividers 
         else:
             print(f'\t{row[0]} is found in the {row[1]} , and has a {row[2]} texture. This rock\'s color is {row[3]}, leaving a streak powder color of {row[4]}. In sunlight, the rock has a {row[5]} luster.')
             line_count += 1
+#prints line count when finished 
     print(f'Processed {line_count} lines.')
